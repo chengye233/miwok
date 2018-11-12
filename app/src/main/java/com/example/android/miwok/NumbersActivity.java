@@ -1,8 +1,9 @@
 package com.example.android.miwok;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,16 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-        Log.v("NumbersActivity", "index: " +words.get(0));
-        Log.v("NumbersActivity", "index: " +words.get(9));
+        //rootView
+        LinearLayout rootView = findViewById(R.id.rootView);
+        TextView wordView = new TextView(this);
+
+        //添加TextView
+        for (int i = 0; i < 10; i++) {
+            TextView textView = new TextView(this);
+            textView.setText(words.get(i));
+            rootView.addView(textView);
+        }
 
     }
 }
