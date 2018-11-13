@@ -30,19 +30,9 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-//        //rootView
-//        LinearLayout rootView = findViewById(R.id.rootView);
-//        TextView wordView = new TextView(this);
-//
-//        //添加TextView
-//        for (int i = 0; i < 10; i++) {
-//            TextView textView = new TextView(this);
-//            textView.setText(words.get(i));
-//            rootView.addView(textView);
-//        }
-
-        //使用ArrayAdapter和ListView减少内存
-        ArrayAdapter itemsAdapter = new ArrayAdapter(this,
+        // 使用ArrayAdapter和ListView减少内存
+        // android.R.layout.simple_list_item_1 预定义的xml布局文件
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, words);
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
