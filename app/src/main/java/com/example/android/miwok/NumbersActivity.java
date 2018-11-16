@@ -20,7 +20,7 @@ public class NumbersActivity extends AppCompatActivity
     {
         //默认
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
 
         // 数据WordList
         List<Word> words = new ArrayList<>();
