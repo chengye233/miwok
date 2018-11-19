@@ -33,7 +33,7 @@ public class WordAdapter extends ArrayAdapter<Word>
      *
      * @param position    数据列表的位置 用来获取列表的数据
      * @param convertView R.layout.list_item
-     * @param parent      默认
+     * @param parent      R.id.list
      * @return convertView
      */
     @Override
@@ -63,9 +63,15 @@ public class WordAdapter extends ArrayAdapter<Word>
 
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
         ImageView iconView = listItemView.findViewById(R.id.list_item_icon);
-        // Get the image resource ID from the current AndroidFlavor object and
-        // set the image to iconView
-        iconView.setImageResource(currentWord.getImageResourceId());
+
+        // 判断是否有图片并设置资源id或4
+        if (currentWord.hasImage()) {
+            iconView.setImageResource(currentWord.getImageResourceId());
+            iconView.setVisibility(View.VISIBLE);
+        } else {
+            iconView.setVisibility(View.GONE);
+        }
+
 
         // 返回 ListView
         return listItemView;

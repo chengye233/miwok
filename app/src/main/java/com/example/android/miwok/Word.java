@@ -17,7 +17,12 @@ public class Word {
     /**
      * 单词图标
      */
-    private int mImageResourceId;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+
+    /**
+     * 没有单词图标时
+     */
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     /**
      * Create a new Word object.
@@ -65,4 +70,12 @@ public class Word {
         return mImageResourceId;
     }
 
+    /**
+     * 判断是否有图片资源
+     * @return
+     */
+    public boolean hasImage()
+    {
+        return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
 }
