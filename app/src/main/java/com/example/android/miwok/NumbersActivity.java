@@ -36,7 +36,7 @@ public class NumbersActivity extends AppCompatActivity
         words.add(new Word("ten", "na’aacha", R.drawable.number_ten));
 
         // 使用WordAdapter
-        WordAdapter wordAdapter = new WordAdapter(this, R.layout.list_item, words);
+        WordAdapter wordAdapter = new WordAdapter(this, R.layout.list_item, words, R.color.category_numbers);
 
         // 构造好的视图放入NumbersActivity的ListView
         ListView listView = findViewById(R.id.list);

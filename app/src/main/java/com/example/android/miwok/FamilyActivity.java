@@ -29,7 +29,7 @@ public class FamilyActivity extends AppCompatActivity {
 
 
         // 使用WordAdapter
-        WordAdapter wordAdapter = new WordAdapter(this, R.layout.list_item, words);
+        WordAdapter wordAdapter = new WordAdapter(this, R.layout.list_item, words, R.color.category_family);
 
         // 构造好的视图放入ListView
         ListView listView = findViewById(R.id.list);

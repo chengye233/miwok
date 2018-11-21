@@ -26,7 +26,7 @@ public class ColorsActivity extends AppCompatActivity {
         words.add(new Word("white", "kelelli", R.drawable.color_white));
 
         // 使用WordAdapter
-        WordAdapter wordAdapter = new WordAdapter(this, R.layout.list_item, words);
+        WordAdapter wordAdapter = new WordAdapter(this, R.layout.list_item, words, R.color.category_colors);
 
         // 构造好的视图放入NumbersActivity的ListView
         ListView listView = findViewById(R.id.list);
