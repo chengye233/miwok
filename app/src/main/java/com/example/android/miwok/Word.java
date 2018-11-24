@@ -4,7 +4,8 @@ package com.example.android.miwok;
  * {@link Word} represents a vocabulary word that the user wants to learn.
  * It contains a default translation and a Miwok translation for that word.
  */
-public class Word {
+public class Word
+{
     /**
      * Default translation for the word
      */
@@ -15,37 +16,53 @@ public class Word {
     private String mMiwokTranslation;
 
     /**
-     * 单词图标
+     * 单词图标资源id
      */
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
     /**
-     * 没有单词图标时
+     * 没有单词图标时为-1
      */
     private static final int NO_IMAGE_PROVIDED = -1;
 
+
     /**
-     * Create a new Word object.
-     *
-     * @param defaultTranslation is the word in a language that the user is already familiar with
-     *                           (such as English)
-     * @param miwokTranslation   is the word in the Miwok language
+     * 发音资源id
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    private int mSongResourceId = NO_SONG_PROVIDES;
+
+    /**
+     * 没有发音资源时为-1
+     */
+    private static final int NO_SONG_PROVIDES = -1;
+
+    /**
+     * 构造函数 发音
+     *
+     * @param defaultTranslation 原来语言
+     * @param miwokTranslation   Miwok语言
+     * @param songResourceId     发音资源id
+     */
+    public Word(String defaultTranslation, String miwokTranslation, int songResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mSongResourceId = songResourceId;
     }
 
     /**
-     * 构造函数 3参
-     * @param defaultTranslation  源语言
-     * @param miwokTranslation  miwok语言
-     * @param imageResourceId  图标
+     * 构造函数 图片&发音
+     *
+     * @param defaultTranslation 源语言
+     * @param miwokTranslation   miwok语言
+     * @param imageResourceId    图标资源id
+     * @param songResourceId     发音资源id
      */
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation,
+                int imageResourceId, int songResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mSongResourceId = songResourceId;
     }
 
     /**
@@ -65,17 +82,32 @@ public class Word {
     /**
      * 获取单词图标id
      */
-    public int getImageResourceId()
-    {
+    public int getImageResourceId() {
         return mImageResourceId;
     }
 
     /**
      * 判断是否有图片资源
-     * @return
+     *
+     * @return true:有图片  false:无图片
      */
-    public boolean hasImage()
-    {
+    public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
+
+    /**
+     * 获得发音资源id
+     */
+    public int getSongResourceId() {
+        return mSongResourceId;
+    }
+
+    /**
+     * 判断是否有发音资源
+     *
+     * @return true:有发音  false:无发音
+     */
+    public boolean hasSong() {
+        return mSongResourceId != NO_SONG_PROVIDES;
     }
 }
