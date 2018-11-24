@@ -43,7 +43,7 @@ public class FamilyActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(wordAdapter);
 
-        //设置发音
+        // 设置发音
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

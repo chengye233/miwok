@@ -14,8 +14,7 @@ import java.util.List;
 /**
  * 将 {@link Word}列表的数据 转换为 @{@link android.widget.ListView}的视图
  */
-public class WordAdapter extends ArrayAdapter<Word>
-{
+public class WordAdapter extends ArrayAdapter<Word> {
     /**
      * item背景颜色
      */
@@ -23,13 +22,13 @@ public class WordAdapter extends ArrayAdapter<Word>
 
     /**
      * Adapter构造器
-     *  @param context 上下文
-     * @param source  R.layout.list_item
-     * @param words 数据列表
-     * @param colorResourceId  R.color.xxx
+     *
+     * @param context         上下文
+     * @param source          R.layout.list_item
+     * @param words           数据列表
+     * @param colorResourceId R.color.xxx
      */
-    public WordAdapter(Context context, int source, List<Word> words, int colorResourceId)
-    {
+    public WordAdapter(Context context, int source, List<Word> words, int colorResourceId) {
         super(context, source, words);
         mColorResourceId = colorResourceId;
     }
@@ -43,8 +42,7 @@ public class WordAdapter extends ArrayAdapter<Word>
      * @return convertView
      */
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
+    public View getView(int position, View convertView, ViewGroup parent) {
         // R.layout.list_item
         View listView = convertView;
         if (listView == null) {
@@ -53,7 +51,7 @@ public class WordAdapter extends ArrayAdapter<Word>
         }
 
         // 从数据列表获取当前位置的Word
-        Word currentWord = getItem(position);
+        final Word currentWord = getItem(position);
 
         // R.layout.list_item 的 R.id.default_text_view
         TextView defaultTextView = listView.findViewById(R.id.default_text_view);
@@ -78,7 +76,7 @@ public class WordAdapter extends ArrayAdapter<Word>
             iconView.setVisibility(View.GONE);
         }
 
-        //设置背景色
+        // 设置背景色
         View textContainer = listView.findViewById(R.id.text_container);
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         textContainer.setBackgroundColor(color);

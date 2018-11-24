@@ -1,8 +1,8 @@
 package com.example.android.miwok;
 
 import android.media.MediaPlayer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -40,7 +40,7 @@ public class ColorsActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(wordAdapter);
 
-        //设置发音
+        // 设置发音
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

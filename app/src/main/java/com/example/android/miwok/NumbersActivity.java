@@ -25,7 +25,7 @@ public class NumbersActivity extends AppCompatActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //默认
+        // 默认
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
@@ -49,7 +49,7 @@ public class NumbersActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(wordAdapter);
 
-        //设置发音
+        // 设置发音
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
