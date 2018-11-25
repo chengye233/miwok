@@ -110,4 +110,14 @@ public class Word
     public boolean hasSong() {
         return mSongResourceId != NO_SONG_PROVIDES;
     }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mImageResourceId=" + mImageResourceId +
+                ", mSongResourceId=" + mSongResourceId +
+                '}';
+    }
 }
