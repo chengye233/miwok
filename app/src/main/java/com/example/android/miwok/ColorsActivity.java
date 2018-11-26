@@ -71,6 +71,15 @@ public class ColorsActivity extends AppCompatActivity {
     }
 
     /**
+     * 后台时也要清空发音资源
+     */
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
+    /**
      * Clean up the media player by releasing its resources.
      */
     private void releaseMediaPlayer() {
