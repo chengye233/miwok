@@ -15,4 +15,7 @@
 <resources>
     <!-- Height of each list item -->
     <dimen name="list_item_height">88dp</dimen>
+
+    <!-- 发音图标大小 -->
+    <dimen name="ic_play_arrow">24dp</dimen>
 </resources>
