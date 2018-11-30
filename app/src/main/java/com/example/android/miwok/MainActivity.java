@@ -16,6 +16,7 @@
 package com.example.android.miwok;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
@@ -29,16 +30,19 @@ public class MainActivity extends AppCompatActivity {
 
         // 获取viewPaper
         ViewPager viewPager = findViewById(R.id.view_paper);
+
         /**
          * 创建{@link CategoryAdapter}
          */
         CategoryAdapter categoryAdapter = new CategoryAdapter(getSupportFragmentManager(),
                 this);
 
-        // 设置adapter
+        // 设置adapter到viewPaper
         viewPager.setAdapter(categoryAdapter);
 
-
+        // 设置viewPaper到tabLayout
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        tabLayout.setupWithViewPager(viewPager);
 
     }
 
