@@ -15,11 +15,9 @@
  */
 package com.example.android.miwok;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,81 +25,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        // 给 Numbers 设置监听器
-        TextView numbers = findViewById(R.id.numbers);
-        numbers.setOnClickListener(new View.OnClickListener() {
-            /**
-             * 点击 Numbers
-             * 发送 显式Intent
-             * 跳转到 NumbersActivity
-             * (将NumbersActivity放到MainActivity上面，通过返回键返回)
-             * @param v Numbers按钮
-             */
-            @Override
-            public void onClick(View v) {
-                //显式Intent
-                Intent intent = new Intent(MainActivity.this,
-                        NumbersActivity.class);
-                startActivity(intent);
-            }
-        });
+        // 获取viewPaper
+        ViewPager viewPager = findViewById(R.id.view_paper);
+        /**
+         * 创建{@link CategoryAdapter}
+         */
+        CategoryAdapter categoryAdapter = new CategoryAdapter(getSupportFragmentManager(),
+                this);
 
-        // 给 Family 设置监听器
-        TextView family = findViewById(R.id.family);
-        family.setOnClickListener(new View.OnClickListener() {
-            /**
-             * 点击 Family Members
-             * 发送 显式Intent
-             * 跳转到 FamilyActivity
-             * @param v Family Members按钮
-             */
-            @Override
-            public void onClick(View v) {
-                // 显式Intent
-                Intent intent = new Intent(MainActivity.this,
-                        FamilyActivity.class);
-                startActivity(intent);
-            }
-        });
+        // 设置adapter
+        viewPager.setAdapter(categoryAdapter);
 
-        // 给 Colors 设置监听器
-        TextView colors = findViewById(R.id.colors);
-        colors.setOnClickListener(new View.OnClickListener() {
-            /**
-             * 点击 Colors
-             * 发送 显式Intent
-             * 跳转到 ColorsActivity
-             * @param v Colors按钮
-             */
-            @Override
-            public void onClick(View v) {
-                // 显式Intent
-                Intent intent = new Intent(MainActivity.this,
-                        ColorsActivity.class);
-                startActivity(intent);
-            }
-        });
 
-        // 给 Phrases 设置监听器
-        TextView phrases = findViewById(R.id.phrases);
-        phrases.setOnClickListener(new View.OnClickListener() {
-            /**
-             * 点击 Phrases
-             * 发送 显式Intent
-             * 跳转到 PhrasesActivity
-             * @param v Phrases按钮
-             */
-            @Override
-            public void onClick(View v) {
-                // 显式Intent
-                Intent intent = new Intent(MainActivity.this,
-                        PhrasesActivity.class);
-                startActivity(intent);
-            }
-        });
 
     }
 
